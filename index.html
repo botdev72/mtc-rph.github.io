@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checklist Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+    h1 { color: #333; }
+    .card { background: white; padding: 20px; margin-top: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .done { color: green; font-weight: bold; }
+    .pending { color: orange; font-weight: bold; }
+    button { padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Daily Checklist Demo</h1>
+  <div class="card">
+    <p><strong>Task 1:</strong> Check Flow Meter <span id="status1" class="pending">Pending</span></p>
+    <button onclick="markDone('status1')">Mark as Done</button>
+  </div>
+  <div class="card">
+    <p><strong>Task 2:</strong> Inspect Electrical Panel <span id="status2" class="pending">Pending</span></p>
+    <button onclick="markDone('status2')">Mark as Done</button>
+  </div>
+  <script>
+    function markDone(id) {
+      const el = document.getElementById(id);
+      el.textContent = "Done";
+      el.className = "done";
+    }
+  </script>
+</body>
+</html>
